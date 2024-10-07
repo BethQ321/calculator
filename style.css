@@ -3,3 +3,75 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 25px 0px;
+}
+
+#display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(163, 161, 161);
+    font-size: 25px;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#corrections {
+    display: flex;
+    width: 200px;
+    height: 50px;
+}
+
+.corrButton {
+    width: 100px;
+    height: 50px;
+}
+
+#backspace {
+    font-size: 12px;
+}
+
+#calcContainer {
+    display: flex;
+    width: 200px;
+    height: 250px;
+}
+
+#numContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 150px;
+    height: 200px;
+}
+
+.num {
+    width: 50px;
+    height: 50px;
+}
+
+#operContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    height: 200px;
+}
+
+.oper {
+    width: 50px;
+    height: 50px;
+}
+
+button {
+    font-size: 20px;
+}

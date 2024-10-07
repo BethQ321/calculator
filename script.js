@@ -1,6 +1,6 @@
 let numA = 3;
-let numB = 456;
-let operator = "";
+let numB = 0;
+let operator = "/";
 
 function add(a, b) {
     return a + b;
@@ -22,10 +22,18 @@ function divide(a, b) {
     };
 };
 
-console.log(add(numA, numB));
+function doOperation(firstNum, secondNum, operation) {
+    if(operation === "+") {
+        return add(firstNum, secondNum);
+    } else if(operation === "-") {
+        return subtract(firstNum, secondNum);
+    } else if(operation === "*") {
+        return multiply(firstNum, secondNum);
+    } else if(operation === "/") {
+        return divide(firstNum, secondNum);
+    } else {
+        return "error";
+    }
+}
 
-console.log(subtract(numA, numB));
-
-console.log(multiply(numA, numB));
-
-console.log(divide(numA, numB));
+console.log(doOperation(numA, numB, operator));
