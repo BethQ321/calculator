@@ -1,6 +1,8 @@
-let numA = 3;
-let numB = 0;
-let operator = "/";
+let numA = "";
+let onNumA = true;
+let numB = "";
+let operator = "";
+let currentDisplay = document.getElementById("display");
 
 function add(a, b) {
     return a + b;
@@ -36,4 +38,18 @@ function doOperation(firstNum, secondNum, operation) {
     }
 }
 
-console.log(doOperation(numA, numB, operator));
+function readclick(sentVal) {
+    if(parseInt(sentVal) >=0 && parseInt(sentVal) <=9 && onNumA === true) {
+        numA += sentVal;
+        currentDisplay.innerHTML += sentVal;
+    } else if(parseInt(sentVal) >=0 && parseInt(sentVal) <=9 && onNumA === false) {
+        numB += sentVal;
+        currentDisplay.innerHTML += sentVal;
+    } else if(sentVal === '+' || sentVal === '-' || sentVal === '*' || sentVal === '/') {
+        operator = sentVal;
+        onNumA = false;
+        currentDisplay.innerHTML += sentVal;
+    } else if(sentVal === '=') {
+        currentDisplay.innerHTML = doOperation(parseFloat(numA), parseFloat(numB), operator);
+    }
+}
